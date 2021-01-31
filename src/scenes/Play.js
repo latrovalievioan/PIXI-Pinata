@@ -17,6 +17,20 @@ export default class Play extends Scene {
     this.background.alpha = 0;
     this.alpha = 0;
 
+    const pinata = new Pinata();
+    pinata.x = -150;
+    pinata.y = -350;
+    this.addChild(pinata);
+    const cactus1 = new Cactus("cactus-1");
+    cactus1.x = -500;
+    cactus1.y = 300;
+    this.addChild(cactus1);
+
+    const cactus2 = new Cactus("cactus-2");
+    cactus2.x = 500;
+    cactus2.y = 300;
+    this.addChild(cactus2);
+
     this._music.once(Music.events.INTRO, () => {
       this.alpha = 1;
       this.background.alpha = 1;
@@ -28,17 +42,6 @@ export default class Play extends Scene {
         repeat: -1,
         ease: "linear.none",
       });
-      const pinata = new Pinata();
-      pinata.x = -150;
-      pinata.y = -350;
-
-      const cactus1 = new Cactus("cactus-1");
-      cactus1.x = -500;
-      cactus1.y = 300;
-
-      const cactus2 = new Cactus("cactus-2");
-      cactus2.x = 500;
-      cactus2.y = 300;
 
       this._music.once(Music.events.START, () => {
         this._music.on(Music.events.BEAT, () => {
@@ -47,9 +50,6 @@ export default class Play extends Scene {
           cactus2.dance();
         });
       });
-      this.addChild(cactus2);
-      this.addChild(cactus1);
-      this.addChild(pinata);
     });
   }
 
