@@ -25,38 +25,40 @@ export default class Pinata extends Container {
     this._rotation *= -1;
     gsap.to(this._body, { rotation: this._rotation });
     this.addParticle();
+    console.log(this._elements.children);
   }
   /**
    * @method
+   * @async
    * Adds new Sprite from particle
    */
-  addParticle() {
+  async addParticle() {
     const particle = new Sprite.from("particle");
     particle.name = particle;
     this._elements.addChild(particle);
-    gsap.to(particle, {
+    await gsap.to(particle, {
       x: Math.floor(Math.random() * 300) - 100,
       y: 200,
       alpha: 0,
       duration: 2,
     });
-    this.removeChild(particle);
+    this._elements.removeChild(particle);
   }
   /**
    * @method
    * Adds new Sprite from chili
    */
-  addChili() {
+  async addChili() {
     const chili = new Sprite.from("chili");
     chili.name = "chili";
     this._elements.addChild(chili);
-    gsap.to(chili, {
+    await gsap.to(chili, {
       x: Math.floor(Math.random() * 300) - 100,
       y: 400,
       alpha: 0,
       duration: 1,
     });
-    this.removeChild(chili);
+    this._elements.removeChild(chili);
   }
   /**
    * @async
