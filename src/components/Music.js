@@ -1,5 +1,5 @@
-import { utils } from 'pixi.js';
-import Assets from '../core/AssetManager';
+import { utils } from "pixi.js";
+import Assets from "../core/AssetManager";
 
 export default class Music extends utils.EventEmitter {
   constructor() {
@@ -21,9 +21,9 @@ export default class Music extends utils.EventEmitter {
    */
   static get events() {
     return {
-      BEAT: 'beat', // Fired on each beat update
-      INTRO: 'intro', // Fired when the guitar intro ends
-      START: 'start', // Fired when the actual music starts
+      BEAT: "beat", // Fired on each beat update
+      INTRO: "intro", // Fired when the guitar intro ends
+      START: "start", // Fired when the actual music starts
     };
   }
 }
