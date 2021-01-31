@@ -7,7 +7,7 @@ export default class Pinata extends Container {
     this._elements = new Container();
     this._elements.y = 250;
     this._elements.x = 100;
-    this._body = Sprite.from("pinata");
+    this._body = new Sprite.from("pinata");
     this._rotation = 0.2;
     this._body.rotation = this._rotation;
     this._body.interactive = true;
@@ -31,7 +31,7 @@ export default class Pinata extends Container {
    * Adds new Sprite from particle
    */
   addParticle() {
-    const particle = Sprite.from("particle");
+    const particle = new Sprite.from("particle");
     particle.name = particle;
     this._elements.addChild(particle);
     gsap.to(particle, {
@@ -47,7 +47,7 @@ export default class Pinata extends Container {
    * Adds new Sprite from chili
    */
   addChili() {
-    const chili = Sprite.from("chili");
+    const chili = new Sprite.from("chili");
     chili.name = "chili";
     this._elements.addChild(chili);
     gsap.to(chili, {
