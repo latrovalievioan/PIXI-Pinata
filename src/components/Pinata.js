@@ -12,7 +12,7 @@ export default class Pinata extends Container {
     this._body.rotation = this._rotation;
     this._body.interactive = true;
     this._body.buttonMode = true;
-    this._body.name = "pinata";
+    this.name = "pinata";
     this._body.addChild(this._elements);
     this.addChild(this._body);
     this._body.on("click", () => this.clickHandle());
@@ -34,7 +34,7 @@ export default class Pinata extends Container {
    */
   async addParticle() {
     const particle = new Sprite.from("particle");
-    particle.name = particle;
+    particle.name = "particle";
     this._elements.addChild(particle);
     await gsap.to(particle, {
       x: Math.floor(Math.random() * 300) - 100,
